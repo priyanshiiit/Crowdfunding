@@ -20,9 +20,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
-    <React.Fragment>
+    <>
       <div id="page-container">
-        <div id="content-wrap">
+        {/* <div id="content-wrap"> */}
           <ToastContainer />
           <Switch>
             <Route path="/all-campaigns" exact component={AllCampaigns} />
@@ -48,10 +48,10 @@ const App = () => {
             <Route path="/" exact component={LandingPage} />
             <Redirect to="/page-not-found" />
           </Switch>
-        </div>
+        {/* </div> */}
         <Footer />
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
