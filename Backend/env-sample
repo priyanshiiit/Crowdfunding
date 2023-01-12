@@ -1,0 +1,7 @@
+JWT_SECRET = <secret-key>
+
+MONGODB_URI = <Your Database URL>
+
+mid = "Your PayTM Merchant ID here" (https://dashboard.paytm.com/next/apikeys)
+key = "Your PayTM Merchant API key here" (https://dashboard.paytm.com/next/apikeys)
+website = <key>
