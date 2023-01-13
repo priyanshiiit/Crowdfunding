@@ -73,9 +73,14 @@ npm installed, Paytm id, MongoDB URI, create-react-app installed, etc. <br>
 
 ![](ScreenShots/LandingPage1.png)
 
+---
+
 On Clicking Donate Button, we can slide through the Ongoing Camapigns section
 
+
 ![](ScreenShots/LandingPage2.png)
+
+---
 
 ### Campaign Page
 
@@ -87,10 +92,13 @@ Donors List (Amount and Transaction ID) for transparency
 
 Here some part of Transaction ID is hidden for security purpose (from backend as well as frontend).
 
+---
+
 ### All Campaigns
 
 ![](ScreenShots/AllCampaign.png)
 
+---
 
 ### Admin DashBoard
 
@@ -98,9 +106,13 @@ Here in bottom we can see message from the Feedback Form present in the Contact 
 
 ![](ScreenShots/AdminDashBoard.png)
 
+---
+
 ### About Us Page
 
 ![](ScreenShots/AboutUsPage.png)
+
+---
 
 ### Conatact Us Page
 
