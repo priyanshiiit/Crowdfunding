@@ -7,32 +7,32 @@ const { User } = require("../models");
 require("dotenv").config();
 
 // Default admin for development stage
-db.User.find().exec(function (err, results) {
-  var count = results.length;
+// db.User.find().exec(function (err, results) {
+//   var count = results.length;
 
-  if (count == 0) {
-    bcrypt.genSalt(10, (err, salt) => {
-      if (err)
-        return res
-          .status(400)
-          .json({ message: "Something went wrong, try again" });
-      bcrypt.hash("abc", salt, (err, hash) => {
-        if (err)
-          return res
-            .status(400)
-            .json({ message: "Something went wrong, try again" });
+//   if (count == 0) {
+//     bcrypt.genSalt(10, (err, salt) => {
+//       if (err)
+//         return res
+//           .status(400)
+//           .json({ message: "Something went wrong, try again" });
+//       bcrypt.hash("abc", salt, (err, hash) => {
+//         if (err)
+//           return res
+//             .status(400)
+//             .json({ message: "Something went wrong, try again" });
 
-        const user = new db.User({
-          email: "imt_2018109@iiitm.ac.in",
-          password: hash,
-          isVerified: true,
-        });
+//         const user = new db.User({
+//           email: "imt_2018109@iiitm.ac.in",
+//           password: hash,
+//           isVerified: true,
+//         });
 
-        user.save();
-      });
-    });
-  }
-});
+//         user.save();
+//       });
+//     });
+//   }
+// });
 
 //-------------------------------------------------------------------------------------------------------
 // Validating email address and domain
