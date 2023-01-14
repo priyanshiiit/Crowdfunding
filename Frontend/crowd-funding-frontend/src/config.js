@@ -1,6 +1,6 @@
+// const backendURL = "https://crowdfunding-backend-five.vercel.app/";
 const backendURL = "https://crowd-funding-backend.vercel.app/";
 // const backendURL = "http://localhost:4000/";
-
 export const getAllCampaignsUrl = () => {
   return backendURL + "api/campaign/all";
 };
