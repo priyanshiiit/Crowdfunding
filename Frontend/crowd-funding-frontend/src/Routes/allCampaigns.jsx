@@ -9,6 +9,7 @@ import { paginate } from "../utills/paginate";
 import { getAllCampaigns } from "../services/campaign";
 import { compare } from "../utills/math";
 import styles from "../Components/styles/allCampaigns.module.css";
+import Shimmer from "../Components/shimmer";
 
 const AllCampaigns = (props) => {
   const [data, setData] = useState([]);
@@ -44,10 +45,11 @@ const AllCampaigns = (props) => {
     <React.Fragment>
       <NavBar />
       <ScrollToTop />
-      {loading && <Loader />}
+      
       <div className={styles.header}>
         <p>All Campaigns</p>
       </div>
+      {loading ? <Shimmer/>:
       <div className={`row ${styles.section}`}>
         {allCampaigns.map((d) => (
           <div key={d._id} className={`col-md-6 col-12 ${styles.campaign}`}>
@@ -63,6 +65,7 @@ const AllCampaigns = (props) => {
           </div>
         ))}
       </div>
+      }
       <Pagination
         itemsCount={data.length}
         pageSize={pageSize}

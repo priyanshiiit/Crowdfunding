@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import Loader from "./loader";
+import Shimmer from "./shimmer";
 import styles from "./styles/onGoingCampaigns.module.css";
 import Campaign from "./everyOngoingCampaigns";
 
@@ -41,25 +41,28 @@ const OnGoingCampaigns = (props) => {
             </span>
           </div>
         </div>
-        {props.loading && <Loader />}
-        <div className={styles.campaigns} ref={Ref}>
-          {props.data.map((d) => (
-            <div
-              key={d._id}
-              className={`col-md-5 col-sm-7 p-0 ${styles.eachCampaign}`}
-            >
-              <Campaign
-                id={d._id}
-                handleClick={props.handleClick}
-                title={d.title}
-                description={d.description}
-                image={d.imageUrl}
-                requiredAmount={d.required}
-                isActivated={d.isActivated}
-              />
-            </div>
-          ))}
-        </div>
+        {props.loading ? (
+          <Shimmer />
+        ) : (
+          <div className={styles.campaigns} ref={Ref}>
+            {props.data.map((d) => (
+              <div
+                key={d._id}
+                className={`col-md-5 col-sm-7 p-0 ${styles.eachCampaign}`}
+              >
+                <Campaign
+                  id={d._id}
+                  handleClick={props.handleClick}
+                  title={d.title}
+                  description={d.description}
+                  image={d.imageUrl}
+                  requiredAmount={d.required}
+                  isActivated={d.isActivated}
+                />
+              </div>
+            ))}
+          </div>
+        )}
         <div className="col-12 text-center">
           <Link to="/all-campaigns">
             <button className={`btn btn-success ${styles.showAll}`}>
