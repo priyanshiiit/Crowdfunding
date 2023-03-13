@@ -4,12 +4,12 @@ import NavBar from "../Components/navbar_notLanding";
 import ProgressBar from "../Components/progressBar";
 import Donated from "../Components/donors";
 import FloatBtn from "../Components/campaignFloatingBtns";
-import Loader from "../Components/loaderFullPage";
 import ScrollToTop from "../Components/scrollToTop";
 import { isNormalInteger } from "../utills/math";
 import { getCampaignData, deleteCampaign } from "../services/campaign";
 import { isAuthorised } from "../services/auth";
 import styles from "../Components/styles/campaign.module.css";
+import Shimmer from "../Components/shimmer";
 
 const Campaign = (props) => {
   const [campaign, setCampaign] = useState({});
@@ -53,8 +53,9 @@ const Campaign = (props) => {
     <React.Fragment>
       <NavBar />
       <ScrollToTop />
-      {loading && <Loader />}
+     
       <FloatBtn campaign={campaign} />
+      {loading?<Shimmer/>: 
       <div className={`col-md-10 col-11 m-auto py-2 ${styles.container}`}>
         {/* {isAuthorised() && (
           <div className="bg-light border p-2">
@@ -142,6 +143,7 @@ const Campaign = (props) => {
 
         <Donated data={campaign.donors} num={campaign.donorsNum} />
       </div>
+      }
     </React.Fragment>
   );
 };
